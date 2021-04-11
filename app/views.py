@@ -13,26 +13,7 @@ from werkzeug.utils import secure_filename
 ###
 # Routing for your application.
 ###
-@app.route('/api/upload', methods = ['POST'])
-def upload():
-    uploadform = UploadForm()
-    if request.method == 'POST' and uploadform.validate_on_submit():
-        description = uploadform.description.data 
-        photo = uploadform.photo.data
 
-        filename = secure_filename(photo.filename)
-        photo.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        form_info = {
-            "message": "File Upload Successful",
-            "filename": filename,
-            "description": description
-        }
-        return jsonify(form_info=form_info)
-    else:
-        error_info = {
-            "errors": form_errors(form)
-        }
-        return jsonify(error_info=error_info)
 
 # Please create all new routes and view functions above this route.
 # This route is now our catch all route for our VueJS single page
@@ -49,7 +30,31 @@ def index(path):
     """
     return render_template('index.html')
 
+@app.route('/api/upload', methods = ['POST'])
+def upload():
+    """Render the website's upload page."""
+    form = UploadForm()
+    if form.validate_on_submit() and request.method == "POST":
+        description = form.description.data
+        photo = form.photo.data
 
+        filename = secure_filename(photo.filename)
+        photo.save(os.path.join(
+            app.config['UPLOAD_FOLDER'], filename
+        ))
+
+        upload_data = {
+            "message": "File Upload Successful",
+            "filename": filename,
+            "description": description
+        }
+        return jsonify(upload_data=upload_data)
+    else:
+        upload_errors = {
+            "errors": form_errors(form)
+        }
+        return jsonify(upload_errors=upload_errors)
+        
 # Here we define a function to collect form errors from Flask-WTF
 # which we can later use
 def form_errors(form):
