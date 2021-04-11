@@ -1,3 +1,27 @@
 body {
     padding-top: 5rem;
 }
+.upload_info{
+    background-color: rgba(164, 240, 164, 0.767);
+    border: 1px solid rgb(1, 65, 1);
+    color: rgb(1, 65, 1);
+    border-radius: 3px;
+    padding-top: 10px;
+}
+
+.upload_errors{
+    background-color: rgba(238, 147, 147, 0.692);
+    border: 1px solid rgb(70, 1, 1);
+    color: rgb(70, 1, 1);
+    border-radius: 3px;
+    padding :10px 0px;
+}
+
+
+.upload_info li{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+

@@ -49,7 +49,7 @@ app.component('app-footer', {
 
 
 const UploadForm = {
-  name: 'upload-form',
+  name: 'uploadform',
   template:`
   <h1>Upload Form</h1>
   <div class= uplaodDiv>
@@ -93,12 +93,12 @@ const UploadForm = {
           return response.json();
       })
       .then(function(jsonResponse){
-          if (jsonResponse['upload_info']){
-              self.messages = [jsonResponse['upload_info']['message']];
-              self.className="uploaded"
+          if (jsonResponse['upload_data']){
+              self.messages = [jsonResponse['upload_data']['message']];
+              self.className="uploadinfo"
           } else {
-              self.messages = jsonResponse['errors']['errors'];
-              self.className="errors"
+              self.messages = jsonResponse['upload_errors']['errors'];
+              self.className="upload_errors"
           }
           
       })
