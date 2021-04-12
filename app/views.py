@@ -44,7 +44,7 @@ def upload():
         ))
 
         upload_data = {
-            "message": "File Upload Successfully",
+            "message": "File Upload Successful",
             "filename": filename,
             "description": description
         }

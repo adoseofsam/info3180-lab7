@@ -78,9 +78,9 @@ const UploadForm = {
   },
   methods: {
       uploadPhoto(){
-          let self=this;
           let uploadForm = document.getElementById('uploadForm');
           let form_data = new FormData(uploadForm)
+          let self=this;
 
           fetch("/api/upload",{
           method: 'POST',
@@ -96,7 +96,7 @@ const UploadForm = {
       .then(function(jsonResponse){
           if (jsonResponse['upload_data']){
               self.messages = [jsonResponse['upload_data']['message']];
-              self.className="uploadinfo"
+              self.className="dataupload"
           } else {
               self.messages = jsonResponse['upload_errors']['errors'];
               self.className="upload_errors"

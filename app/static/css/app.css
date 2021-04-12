@@ -1,7 +1,7 @@
 body {
     padding-top: 5rem;
 }
-.upload_info{
+.dataupload{
     background-color: rgba(164, 240, 164, 0.767);
     border: 1px solid rgb(1, 65, 1);
     color: rgb(1, 65, 1);
@@ -18,7 +18,7 @@ body {
 }
 
 
-.upload_info li{
+.dataupload li{
     list-style-type: none;
     margin: 0;
     padding: 0;
