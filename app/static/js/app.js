@@ -52,7 +52,7 @@ const UploadForm = {
   name: 'uploadform',
   template:`
   <h1>Upload Form</h1>
-  <div class= uploadDiv>
+  <div :class="[className]">
       <ul>
           <li v-for="message in messages">{{message}}</li>
       </ul>
@@ -68,6 +68,7 @@ const UploadForm = {
       </fieldset>
       <button type="submit" class="btn btn-primary">Submit</button>
   </form>
+  </div>
   `,
   data(){
       return {
