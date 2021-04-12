@@ -2,19 +2,21 @@ body {
     padding-top: 5rem;
 }
 .dataupload{
-    background-color: rgba(164, 240, 164, 0.767);
-    border: 1px solid rgb(1, 65, 1);
-    color: rgb(1, 65, 1);
+    background-color:#c1f9a2;
+    border: 1px rgb(1, 65, 1);
     border-radius: 3px;
-    padding-top: 10px;
+    padding: 10px 10px;
+    color: rgb(1, 65, 1);
+    
 }
 
 .upload_errors{
-    background-color: rgba(238, 147, 147, 0.692);
-    border: 1px solid rgb(70, 1, 1);
-    color: rgb(70, 1, 1);
+    background-color: rgba(255,0,0,0.3);
     border-radius: 3px;
     padding :10px 0px;
+    border: 1px solid rgb(70, 1, 1);
+    color: rgb(70, 1, 1);
+    
 }
 
 
