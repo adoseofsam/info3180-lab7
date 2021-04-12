@@ -18,12 +18,12 @@ app.component('app-header', {
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <router-link class="nav-link" to="/">Home <span class="sr-only">(current)</span></router-link>
-        </li>
+           <router-link to="/" class="nav-link">Home</router-link>
+         </li>
       </ul>
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <router-link class="nav-link" to="/upload">Upload<span class="sr-only">(current)</span></router-link>
+            <router-link to="/upload" class="nav-link">Upload</router-link>
         </li>
       </ul>
     </div>
@@ -52,7 +52,7 @@ const UploadForm = {
   name: 'uploadform',
   template:`
   <h1>Upload Form</h1>
-  <div class= uplaodDiv>
+  <div class= uploadDiv>
       <ul>
           <li v-for="message in messages">{{message}}</li>
       </ul>
